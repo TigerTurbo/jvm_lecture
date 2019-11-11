@@ -12,7 +12,10 @@ import java.util.Random;
 public class MyTest5 {
 
     public static void main(String[] args){
+
         System.out.println(MyChild5.b);
+
+        System.out.println(MyChild6.thread);
     }
 
 }
@@ -20,9 +23,35 @@ public class MyTest5 {
 interface MyParent5 {
     public static final int a = 5;
     // public static final int a = new Random().nextInt(2); 如果删掉MyParent5的class文件会报错
+
+    public static Thread thread = new Thread(){
+        {
+            // 运行之后不会输出，说明接口没有初始化
+            System.out.println("MyParent5 invoked");
+        }
+    };
+
 }
 
 interface MyChild5 extends MyParent5 {
     public static final int b = 6;
     // public static final int b = new Random().nextInt(2); 如果删掉MyParent5的class文件会报错
+}
+
+interface MyGrandpa5{
+    public static Thread thread = new Thread(){
+        {
+            // 运行之后不会输出，说明接口没有初始化
+            System.out.println("MyGrandpa5 invoked");
+        }
+    };
+}
+
+interface MyChild6 extends MyGrandpa5{
+    public static Thread thread = new Thread(){
+        {
+            // 运行之后不会输出，说明接口没有初始化
+            System.out.println("MyChild6 invoked");
+        }
+    };
 }
