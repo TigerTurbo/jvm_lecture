@@ -1,5 +1,8 @@
 package com.yshuoo.jvm.classloader;
 
+/**
+ * 双亲委托机制
+ */
 public class MyTest7 {
 
     public static void main(String[] args){
