@@ -10,6 +10,8 @@ public class MyTest16 extends ClassLoader{
 
     private String classLoaderName;
 
+    private String path;
+
     private final String fileExtension = ".class";
 
     public MyTest16(String classLoaderName){
@@ -22,6 +24,10 @@ public class MyTest16 extends ClassLoader{
         this.classLoaderName = classLoaderName;
     }
 
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     @Override
     public String toString() {
         return "MyTest16{" +
@@ -31,6 +37,10 @@ public class MyTest16 extends ClassLoader{
 
     @Override
     protected Class<?> findClass(String className) throws ClassNotFoundException {
+
+        System.out.println("findClass invoked " + className);
+        System.out.println("class loader name " + this.classLoaderName);
+
         byte[] data = this.loadClassData(className);
         return defineClass(className,data,0,data.length);
     }
@@ -39,9 +49,12 @@ public class MyTest16 extends ClassLoader{
         InputStream is = null;
         byte[] data = null;
         ByteArrayOutputStream baos = null;
+
+        name = name.replace(".","\\");
+
         try{
-            this.classLoaderName = this.classLoaderName.replace(".","/");
-            is = new FileInputStream(new File(name + this.fileExtension));
+
+            is = new FileInputStream(new File(this.path + name + this.fileExtension));
             baos = new ByteArrayOutputStream();
             int ch = 0;
             while (-1 != (ch = is.read())){
@@ -62,14 +75,33 @@ public class MyTest16 extends ClassLoader{
         return data;
     }
 
-    public static void test(ClassLoader classLoader) throws Exception{
+    /*public static void test(ClassLoader classLoader) throws Exception{
         Class<?> clazz = classLoader.loadClass("com.yshuoo.jvm.classloader.MyTest1");
         Object object = clazz.newInstance();
         System.out.println(object);
-    }
+        System.out.println(object.getClass().getClassLoader());
+    }*/
 
     public static void main(String[] args) throws Exception{
         MyTest16 loader1 = new MyTest16("loader1");
-        test(loader1);
+        // 这里还是系统类加载器
+        /*loader1.setPath("/d/workspace/jvm_lecture/target/classes");*/
+        // 这里指定了路径，并且删除了系统里的myTest1,父加载器加载不了，所以只能由我们定义的加载器加载
+        loader1.setPath("D:\\workspace\\");
+        // 重新构建之后，myTest1会出现在系统路径下，再执行时，系统类加载器可以找到系统下有myTest1，所以不会走到指定路径
+        Class<?> clazz = loader1.loadClass("com.yshuoo.jvm.classloader.MyTest1");
+        System.out.println("class: " + clazz.hashCode());
+        Object object = clazz.newInstance();
+        System.out.println(object);
+
+        MyTest16 loader2 = new MyTest16("loader2");
+        loader2.setPath("D:\\workspace\\");
+
+        // 这里不会二次加载，同一个类只会加载一次
+        // 如果删掉已经编译的MyTest1，会加载两次
+        Class<?> clazz2 = loader2.loadClass("com.yshuoo.jvm.classloader.MyTest1");
+        System.out.println("class: " + clazz2.hashCode());
+        Object object2 = clazz2.newInstance();
+        System.out.println(object2);
     }
 }
