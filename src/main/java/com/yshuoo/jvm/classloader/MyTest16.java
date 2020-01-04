@@ -94,7 +94,27 @@ public class MyTest16 extends ClassLoader{
         Object object = clazz.newInstance();
         System.out.println(object);
 
-        MyTest16 loader2 = new MyTest16("loader2");
+        loader1 = null;
+        clazz = null;
+        object = null;
+
+        System.gc();
+        Thread.sleep(20000);
+
+
+        loader1 = new MyTest16("loader1");
+        loader1.setPath("D:\\workspace\\");
+        clazz = loader1.loadClass("com.yshuoo.jvm.classloader.MyTest1");
+        System.out.println("class: " + clazz.hashCode());
+        object = clazz.newInstance();
+        System.out.println(object);
+
+        /**//*MyTest16 loader2 = new MyTest16("loader2");*//*
+        *//**
+         * 这种初始化方式，在MyTest1已经被删除的情况下，由于loader1是父加载器，在上面已经被加载过了
+         * 所以这里不会再去重新加载，直接返回loader1加载的结果
+         *//*
+        MyTest16 loader2 = new MyTest16(loader1,"loader2");
         loader2.setPath("D:\\workspace\\");
 
         // 这里不会二次加载，同一个类只会加载一次
@@ -103,5 +123,14 @@ public class MyTest16 extends ClassLoader{
         System.out.println("class: " + clazz2.hashCode());
         Object object2 = clazz2.newInstance();
         System.out.println(object2);
+
+        MyTest16 loader3 = new MyTest16("loader3");
+        loader3.setPath("D:\\workspace\\");
+        Class<?> clazz3 = loader3.loadClass("com.yshuoo.jvm.classloader.MyTest1");
+        System.out.println("class: " + clazz2.hashCode());
+        Object object3 = clazz3.newInstance();
+        System.out.println(object3);*/
+
+
     }
 }

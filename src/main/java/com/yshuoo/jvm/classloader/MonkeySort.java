@@ -14,8 +14,7 @@ public class MonkeySort {
     private static int [] result = new int[10];
 
     static{
-        Random random = new Random();
-        generate(random,0,10,0);
+        generate();
     }
 
     /**
@@ -32,38 +31,32 @@ public class MonkeySort {
     }
 
     private static void sort(int num, Random random){
-        Set<Integer> numberSet = new HashSet<>();
+        Set<Integer> numberSet = new HashSet<Integer>();
         System.out.println("第" + num + "次");
         for (int i = 0; i < 10; i++){
             int index = random.nextInt(10);
             while (numberSet.contains(index)){
-
+                index = random.nextInt(10);
             }
             numberSet.add(index);
             int number = array[index];
             result[i] = number;
-            System.out.print(" " + array[i]);
+            System.out.print(" " + result[i]);
         }
         System.out.println();
     }
 
-    private static void generate(Random random, int min, int max, int index){
-        try{
-            if (min == max){
-                result[index] = min;
-                return;
-            }
-            int s = random.nextInt(max) % (max - min + 1) + min;
-            if (min <= s){
-                generate(random,min,s,index++);
-            }
-            if (s+1 <= max){
-                generate(random,s+1,max,index++);
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+    private static void generate(){
+        array[0]=8;
+        array[1]=5;
+        array[2]=3;
+        array[3]=6;
+        array[4]=4;
+        array[5]=9;
+        array[6]=7;
+        array[7]=10;
+        array[8]=1;
+        array[9]=2;
     }
 
 
