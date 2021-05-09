@@ -15,7 +15,7 @@ public class MyTest5 {
 
         System.out.println(MyChild5.b);
 
-        System.out.println(MyChild6.thread);
+        System.out.println(MyParent5_1.thread);
     }
 
 }
@@ -55,3 +55,22 @@ interface MyChild6 extends MyGrandpa5{
         }
     };
 }
+
+interface MyGrandpa5_1{
+    public static Thread thread = new Thread(){
+        {
+            // 运行之后不会输出，说明接口没有初始化
+            System.out.println("MyGrandpa5_1 invoked");
+        }
+    };
+}
+
+interface MyParent5_1 extends MyGrandpa5_1{
+    public static Thread thread = new Thread(){
+        {
+            // 运行之后不会输出，说明接口没有初始化
+            System.out.println("MyParent5_1 invoked");
+        }
+    };
+}
+

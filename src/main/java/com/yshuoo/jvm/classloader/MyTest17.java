@@ -12,10 +12,6 @@ public class MyTest17 {
          * 因此不会实例化MyCat对象，即没有对MyCat进行主动使用，这里不会加载MyCat Class
          */
         // Object object = clazz.newInstance();
-
-
-
-
     }
 
 }

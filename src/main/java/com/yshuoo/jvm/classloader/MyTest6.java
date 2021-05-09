@@ -17,7 +17,6 @@ public class MyTest6 {
 
 class Singleton{
     public static int counter1;
-    public static int counter2 = 0;
 
     public static Singleton singleton = new Singleton();
 
@@ -28,7 +27,8 @@ class Singleton{
         System.out.println("counter2: " + counter2);
     }
 
-    // public static int counter2 = 0; 代码移到这里输出就变成了0，执行到这里时相当于又手工赋值0
+    // 代码移到这里输出就变成了0，执行到这里时相当于又手工赋值0
+    public static int counter2 = 0;
 
     public static Singleton getInstance(){
         return singleton;
