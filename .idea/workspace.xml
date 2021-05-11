@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b07fd0-dbf6-4576-ba21-5cbe816fbf6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/DynamicSubject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest5.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest6.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest7.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/MyTest8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/RealSubject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/bytecode/Subject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/memory/MyTest1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyChild5.class" afterPath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyChild5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyTest26.class" afterPath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyTest26.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyTest5.class" afterPath="$PROJECT_DIR$/target/classes/com/yshuoo/jvm/classloader/MyTest5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/classloader/MyTest26.java" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/classloader/MyTest26.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/classloader/MyTest5.java" afterPath="$PROJECT_DIR$/src/main/java/com/yshuoo/jvm/classloader/MyTest5.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -503,7 +485,7 @@
       <workItem from="1620352255730" duration="7021000" />
       <workItem from="1620394582710" duration="1679000" />
       <workItem from="1620436382197" duration="34655000" />
-      <workItem from="1620607614999" duration="16646000" />
+      <workItem from="1620607614999" duration="16822000" />
     </task>
     <task id="LOCAL-00001" summary="双亲委托机制">
       <created>1573483712850</created>
@@ -589,11 +571,18 @@
       <option name="project" value="LOCAL" />
       <updated>1620543479217</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branch 'master' of https://github.com/buerhener/jvm_lecture&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/yshuoo/jvm/classloader/MyTest26.java">
+      <created>1620717203292</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620717203292</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122479000" />
+    <option name="totallyTimeSpent" value="122655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -612,7 +601,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4988067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1911447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1911447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
