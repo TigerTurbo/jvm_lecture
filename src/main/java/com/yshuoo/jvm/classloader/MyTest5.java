@@ -33,8 +33,8 @@ interface MyParent5 {
 
 }
 
-interface MyChild5 extends MyParent5 {
-    public static final int b = 6;
+class MyChild5 implements MyParent5 {
+    public static int b = 6;
     // public static final int b = new Random().nextInt(2); 如果删掉MyParent5的class文件会报错
 }
 
